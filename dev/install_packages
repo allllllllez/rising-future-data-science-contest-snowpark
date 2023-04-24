@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR=$(cd $(dirname $0) && pwd)
+
+conda install -n pysnowpark  -c https://repo.anaconda.com/pkgs/snowflake --file ${SCRIPT_DIR}/requirements_conda.txt -y
+# conda-forge にも Snowflake packages にもないので。。。
+# conda install -c uehara1414 japanize-matplotlib
+pip install -r ${SCRIPT_DIR}/requirements.txt

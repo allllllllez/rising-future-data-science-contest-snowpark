@@ -1,0 +1,21 @@
+#################################################
+# Usage:
+#     * Start Snowpark
+#         docker compose run -p 8888:8888 data_science_contest_icetire
+# Requirements:
+#     * aws credentials
+#     * Snowflake user & password/keypair
+#################################################
+version: "3.8"
+services:
+  data_science_contest_icetire:
+    image: icetire:latest
+    ports:
+      - 8888:8888
+    volumes:
+      - "$PWD/dev:/home/dev"
+      - "$PWD/.ssh:/home/.ssh"
+    tty: true
+    container_name: data_science_contest_icetire
+    working_dir: /home/
+

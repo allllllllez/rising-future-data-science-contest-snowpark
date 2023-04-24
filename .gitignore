@@ -1,0 +1,6 @@
+# Ignore local ipynb_checkpoints, pycache
+**/.ipynb_checkpoints/*
+**/__pycache__/*
+
+**.env**
+./.ssh/*

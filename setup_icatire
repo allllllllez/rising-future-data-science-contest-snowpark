@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+DOCKERIMAGES_DIR="./DockerImages"
+ICETIRE_DIR="./icetire"
+
+if [[ ! -e "${DOCKERIMAGES_DIR}" ]]; then
+    mkdir "${DOCKERIMAGES_DIR}"
+fi
+cd DockerImages
+
+if [[ ! -e "${ICETIRE_DIR}" ]]; then
+    git clone https://github.com/Snowflake-Labs/icetire.git "${ICETIRE_DIR}"
+fi
+
+cd "${ICETIRE_DIR}"
+git pull
+docker build --pull -t icetire .
